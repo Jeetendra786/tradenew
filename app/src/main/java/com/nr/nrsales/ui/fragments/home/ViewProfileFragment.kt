@@ -56,8 +56,8 @@ class ViewProfileFragment : BaseFragment(R.layout.fragment_view_profile) {
         mBinding = binding as FragmentViewProfileBinding
         context = requireActivity()
         //val args = arguments
-         //val driver = (args?.getParcelable("data") as User?)!!
-        mBinding.user =sharedPrf.getUser2()
+        //val driver = (args?.getParcelable("data") as User?)!!
+        mBinding.user = sharedPrf.getUser2()
         init()
     }
 
@@ -65,11 +65,11 @@ class ViewProfileFragment : BaseFragment(R.layout.fragment_view_profile) {
     private fun init() {
         mBinding.headerLay.tvLogo.text = "Profile"
         mBinding.headerLay.imgHeader.setOnClickListener { onBackPressed() }
-mBinding.aadharFront.setOnClickListener { showData(sharedPrf.getUser2()?.aadhar_front) }
-mBinding.aadharBack.setOnClickListener { showData(sharedPrf.getUser2()?.aadhar_back) }
-mBinding.passbookFrontPage.setOnClickListener { showData("https://convertstext.net/unlock/uploads/images/"+sharedPrf.getUser2()?.passbook_photo) }
-mBinding.panFront.setOnClickListener { showData(sharedPrf.getUser2()?.pan_front) }
-mBinding.panBack.setOnClickListener { showData(sharedPrf.getUser2()?.pan_back) }
+        mBinding.aadharFront.setOnClickListener { showData(sharedPrf.getUser2()?.aadhar_front) }
+        mBinding.aadharBack.setOnClickListener { showData(sharedPrf.getUser2()?.aadhar_back) }
+        mBinding.passbookFrontPage.setOnClickListener { showData("https://convertstext.net/unlock/uploads/images/" + sharedPrf.getUser2()?.passbook_photo) }
+        mBinding.panFront.setOnClickListener { showData(sharedPrf.getUser2()?.pan_front) }
+        mBinding.panBack.setOnClickListener { showData(sharedPrf.getUser2()?.pan_back) }
 
     }
 
