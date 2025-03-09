@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.nr.nrsales.ui.fragments.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_LoginFragment"
+            app:destination="@id/loginFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation" />
+        <action
+            android:id="@+id/action_splashFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.nr.nrsales.ui.fragments.login_signup.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_LoginFragment_to_signupFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment2"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminHomeFragment"
+            app:destination="@id/adminHomeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.nr.nrsales.ui.fragments.login_signup.RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.nr.nrsales.ui.fragments.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_splashFragment"
+            app:destination="@id/splashFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation" />
+        <action
+            android:id="@+id/action_homeFragment_to_getAQuoteFragment"
+            app:destination="@id/getAQuoteFragment" />
+
+
+        <action
+            android:id="@+id/action_homeFragment_to_orderListFragment"
+            app:destination="@id/orderListFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_invoiceFragment"
+            app:destination="@id/invoiceFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/getAQuoteFragment"
+        android:name="com.nr.nrsales.ui.fragments.home.AddFundFragment"
+        android:label="AddFundFragment"
+        tools:layout="@layout/fragment_add_fund" />
+
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.nr.nrsales.ui.fragments.home.EditProfileFragment"
+        android:label="EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile" />
+
+
+    <fragment
+        android:id="@+id/invoiceFragment"
+        android:name="com.nr.nrsales.ui.fragments.home.WithdrawalFragment"
+        android:label="InvoiceFragment"
+        tools:layout="@layout/fragment_withdrawal">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/orderListFragment"
+        android:name="com.nr.nrsales.ui.fragments.home.OrderListFragment"
+        android:label="OrderListFragment"
+        tools:layout="@layout/fragment_order_list">
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.nr.nrsales.ui.fragments.adminhome.AdminHomeFragment"
+        android:label="AdminHomeFragment"
+        tools:layout="@layout/fragment_admin_home">
+        <action
+            android:id="@+id/action_adminHomeFragment_to_splashFragment"
+            app:destination="@id/splashFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_requestFundListFragment"
+            app:destination="@id/requestFundListFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_withdrawalRequestFragment"
+            app:destination="@id/withdrawalRequestFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_usersListFragment"
+            app:destination="@id/usersListFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_notificationListFragment"
+            app:destination="@id/notificationListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestFundListFragment"
+        android:name="com.nr.nrsales.ui.fragments.adminhome.RequestFundListFragment"
+        android:label="RequestFundListFragment"
+        tools:layout="@layout/fragment_request_fund_list"/>
+
+    <fragment
+        android:id="@+id/withdrawalRequestFragment"
+        android:name="com.nr.nrsales.ui.fragments.adminhome.WithdrawalRequestFragment"
+        android:label="WithdrawalRequestFragment"
+        tools:layout="@layout/fragment_withdrawal_requests"/>
+    <fragment
+        android:id="@+id/usersListFragment"
+        android:name="com.nr.nrsales.ui.fragments.adminhome.UsersListFragment"
+        android:label="UsersListFragment"
+        tools:layout="@layout/fragment_users_list">
+        <action
+            android:id="@+id/action_usersListFragment_to_viewProfileFragmentx"
+            app:destination="@id/viewProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationListFragment"
+        android:name="com.nr.nrsales.ui.fragments.adminhome.NotificationListFragment"
+        android:label="NotificationListFragment"
+        tools:layout="@layout/fragment_notification_list"/>
+    <fragment
+        android:id="@+id/viewProfileFragment"
+        android:name="com.nr.nrsales.ui.fragments.home.ViewProfileFragment"
+        android:label="ViewProfileFragment"
+        tools:layout="@layout/fragment_view_profile"/>
+
+
+
+</navigation>

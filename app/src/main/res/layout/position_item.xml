@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.nr.nrsales.model.Position" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tracking_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_1sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_weight=".02"
+                android:background="@color/red"
+                android:contentDescription="@string/app_name"
+                android:padding="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.98"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_weight=".35"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:src="@drawable/baseline_supervised_user"
+                        android:contentDescription="@string/app_name"
+                        android:padding="2dp"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_weight="1.65"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:padding="@dimen/_4sdp"
+                            android:text='@{data.share_name}'
+                            android:textColor="@color/texts"
+                            android:textSize="@dimen/_13sdp"
+                            android:textStyle="bold" />
+                        <TextView
+                             android:layout_alignParentEnd="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:padding="@dimen/_3sdp"
+                            android:text='@{" ₹ "+data.share_amount}'
+                            android:textColor="@color/texts"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="normal" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:padding="@dimen/_4sdp"
+                            android:text='@{"+ ₹ "+data.profit}'
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_13sdp"
+                            android:textStyle="bold" />
+                        <TextView
+                             android:layout_alignParentEnd="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:padding="@dimen/_3sdp"
+                            android:text='@{"- ₹ "+data.loss}'
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/_13sdp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:padding="@dimen/_3sdp"
+                        android:text='@{"Position :- "+data.share_position}'
+                        android:textColor="@color/texts"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="normal" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
