@@ -17,13 +17,14 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class LoginViewModel @Inject constructor
-    (
+class LoginViewModel @Inject constructor(
     private val repository: Repository,
     application: Application
 ) : AndroidViewModel(application) {
     val _response: MutableLiveData<NetworkResult<UserRes>> = MutableLiveData()
     fun fetchLoginResponse(params: HashMap<String, Any>) = viewModelScope.launch {
         repository.getLogin(params).collect { values ->
-            _response.value = values } }
+            _response.value = values
+        }
+    }
 }
